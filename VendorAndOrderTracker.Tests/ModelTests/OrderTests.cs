@@ -23,7 +23,7 @@ namespace VendorAndOrderTracker.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
-    
+
     [TestMethod]
     public void GetAll_ReturnsOrders_OrderList()
     {
@@ -43,6 +43,20 @@ namespace VendorAndOrderTracker.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    // [TestMethod]
+    // public void ClearAll_ClearsAllOrders_OrderList()
+    // {
+    //   Order firstOrder = new Order("test", "10/10/22", "test order", 500);
+    //   Order secondOrder = new Order("not test", "01/23/23", "real order", 60);
+    //   List<Order> newList = new List<Order> { };
+
+    //   Order.ClearAll();
+
+    //   List<Order> result = Order.GetAll();
+
+    //   CollectionAssert.AreEqual(newList, result);
+    // }
 
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
