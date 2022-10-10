@@ -27,7 +27,21 @@ namespace VendorAndOrderTracker.Tests
       string description = "Really big order.";
       Order newOrder = new Order("test", "10/10/22", description, 500);
       string result = newOrder.Description;
+      
       Assert.AreEqual(description, result);
+    }
+
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      string description = "Really big order.";
+      Order newOrder = new Order("test", "10/10/22", description, 500);
+      
+      string updatedDescription = "Very small order.";
+      newOrder.Description = updatedDescription;
+      string result = newOrder.Description;
+
+      Assert.AreEqual(updatedDescription, result);
     }
   }
 }
