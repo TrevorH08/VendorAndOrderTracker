@@ -20,5 +20,14 @@ namespace VendorAndOrderTracker.Tests
       Order newOrder = new Order("test", "10/10/22", "test order", 500);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+
+    [TestMethod]
+    public void GetDescrtiption_ReturnsDescription_String()
+    {
+      string description = "Really big order.";
+      Order newOrder = new Order("test", "10/10/22", description, 500);
+      string result = newOrder.Description;
+      Assert.AreEqual(description, result);
+    }
   }
 }
