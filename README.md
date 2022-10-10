@@ -9,7 +9,6 @@
 * _C#_
 * _.NET 5_
 * _HTML_
-* _Javascript_
 * _ASP.NET Core_
 
 ## Description
