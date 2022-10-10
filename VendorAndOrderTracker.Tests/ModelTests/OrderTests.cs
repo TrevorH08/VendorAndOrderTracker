@@ -27,7 +27,7 @@ namespace VendorAndOrderTracker.Tests
       string description = "Really big order.";
       Order newOrder = new Order("test", "10/10/22", description, 500);
       string result = newOrder.Description;
-      
+
       Assert.AreEqual(description, result);
     }
 
@@ -43,5 +43,30 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual(updatedDescription, result);
     }
+
+        [TestMethod]
+    public void GetTitle_ReturnsTitle_String()
+    {
+      string title = "test";
+      Order newOrder = new Order(title, "10/10/22", "Very small order.", 500);
+      string result = newOrder.Title;
+
+      Assert.AreEqual(title, result);
+    }
+
+    [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+      string title = "Really big order.";
+      Order newOrder = new Order(title, "10/10/22", "Very small order.", 500);
+      
+      string updatedTitle = "Very small order.";
+      newOrder.Title = updatedTitle;
+      string result = newOrder.Title;
+
+      Assert.AreEqual(updatedTitle, result);
+    }
+
+    
   }
 }
