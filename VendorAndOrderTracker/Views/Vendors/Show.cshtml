@@ -4,12 +4,12 @@
 
 @using VendorAndOrderTracker.Models;
 
-<h3>@vendor.Name 's Orders: </h3>
+<h3>Order Details </h3>
 
 <ol>
-@foreach (Order order in @Model["items"])
+@foreach (Order order in @Model["orders"])
 {
-  <li><a href='/vendors/@Model["category"].Id/orders/@item.Id'>@item.Description</a></li>
+  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
 }
 </ol>
 
