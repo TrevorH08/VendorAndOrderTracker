@@ -90,6 +90,29 @@ namespace VendorAndOrderTracker.Tests
       Assert.AreEqual(updatedDate, result);
     }
 
+    [TestMethod]
+    public void GetPrice_ReturnsPrice_Int()
+    {
+      int price = 500;
+      Order newOrder = new Order("test", "10/10/22",  "Very small order.", price);
+      int result = newOrder.Price;
+
+      Assert.AreEqual(price, result);
+    }
+
+    [TestMethod]
+    public void SetPrice_SetPrice_Int()
+    {
+      int price = 500;
+      Order newOrder = new Order("test", "10/10/22", "Very small order.", price);
+      
+      int updatedPrice = 1000;
+      newOrder.Price = updatedPrice;
+      int result = newOrder.Price;
+
+      Assert.AreEqual(updatedPrice, result);
+    }
+
     
   }
 }
