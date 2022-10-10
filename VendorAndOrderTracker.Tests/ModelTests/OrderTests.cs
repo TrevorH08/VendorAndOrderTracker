@@ -13,6 +13,16 @@ namespace VendorAndOrderTracker.Tests
     {
       Order.ClearAll();
     }
+    
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> newList = new List<Order> {};
+
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
 
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
@@ -113,6 +123,5 @@ namespace VendorAndOrderTracker.Tests
       Assert.AreEqual(updatedPrice, result);
     }
 
-    
   }
 }
