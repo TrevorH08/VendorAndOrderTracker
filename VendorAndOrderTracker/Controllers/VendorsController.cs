@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using VendorAndOrderTracker.Models;
 
 namespace VendorAndOrderTracker.Controllers{
   public class VendorsController : Controller{
@@ -38,12 +38,12 @@ namespace VendorAndOrderTracker.Controllers{
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResulte Create(int vendorId, string orderTitle, string orderDate, string orderDescription, int orderPrice)
+    public ActionResult Create(int vendorId, string orderTitle, string orderDate, string orderDescription, int orderPrice)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor foundVendor = vendor.Find(vendorId);
+      Vendor foundVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(orderTitle, orderDate, orderDescription, orderPrice);
-      foundVendor.AddItem(newOrder);
+      foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
       model.Add("vendor", foundVendor);
