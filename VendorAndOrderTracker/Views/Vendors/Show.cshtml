@@ -4,7 +4,9 @@
 
 @using VendorAndOrderTracker.Models;
 
-<h3>Order Details </h3>
+<h2>Vendor: @Model["vendor"].Name</h2>
+<h2>Description: @Model["vendor"].Description</h2>
+<h2>Vendor Orders: </h2>
 
 <ol>
 @foreach (Order order in @Model["orders"])
