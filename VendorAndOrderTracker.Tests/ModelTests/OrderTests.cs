@@ -13,11 +13,31 @@ namespace VendorAndOrderTracker.Tests
     {
       Order.ClearAll();
     }
-    
+
     [TestMethod]
     public void GetAll_ReturnsEmptyList_OrderList()
     {
       List<Order> newList = new List<Order> {};
+
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
+    
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      string title1 = "Test";
+      string title2 = "NotTest";
+      string date1 = "10/09/22";
+      string date2 = "12/24/22";
+      string description1 = "Tiny Order";
+      string description2 = "Massive Order";
+      int price1 = 40;
+      int price2 = 40000;
+      Order newOrder1 = new Order(title1, date1, description1, price1);
+      Order newOrder2 = new Order(title2, date2, description2, price2);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       List<Order> result = Order.GetAll();
 
@@ -122,6 +142,7 @@ namespace VendorAndOrderTracker.Tests
 
       Assert.AreEqual(updatedPrice, result);
     }
+
 
   }
 }
